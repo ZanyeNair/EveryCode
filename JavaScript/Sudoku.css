@@ -13,7 +13,7 @@ hr{
   width: 450px;
   height: 450px;
   
-  background-color: blue;
+  background-color: lightblue;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -26,7 +26,7 @@ hr{
   font-size: 20px;
   font-weight: bold;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
 }
 #digits{
@@ -36,15 +36,33 @@ hr{
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 .number{
-  width: 48px;
-  height: 48px; /* for border later */ 
-  border: 1px solid black;
-  
-  font-size: 20px;
-  font-weight: bold;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  width: 44px; 
+    height: 44px;
+    border: 1px solid black;
+    margin: 2px;
+
+    /* Text */
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-selected {
+  background-color: gray;
+}
+.tile-start {
+  background-color: whitesmoke;
+}
+
+.horizontal-line {
+  border-bottom: 1px solid black;
+}
+
+.vertical-line {
+  border-right: 1px solid black;
 }
