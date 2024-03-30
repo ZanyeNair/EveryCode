@@ -1,8 +1,14 @@
+*{
+    margin: 0px;
+}
+
 body{
     text-align: center;
+
 }
 p{
-    font-size: 50px;
+    font-size: 20px;
+    margin: 2px;
     font-weight: bold;
 
     background-color: lightblue;
@@ -34,6 +40,52 @@ p{
     /* Text */
     font-size: 20px;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .circle{
+    margin: auto;
+  
+    width: 160px;
+    height:160px;
+    display: flex;
+    background-color: lightblue;
+    position:relative;
+    align-items: center;
+    justify-content: center;
+
+} */
+.outer{
+
+    width: 160px;
+    height:160px;
+    border: 1px solid black;
+    padding:20px;
+    justify-content: center;
+    display: flex;
+    border-radius: 50%;
+    box-shadow: 6px 6px 10px -1px lightgrey, -6px -6px 10px -1px lightgrey;
+    align-items: center;
+}
+.inner{
+    width: 120px;
+    height:120px;
+    display: flex;
+ 
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(255, 255, 255, 0.5), 0.5px 0.5px 0px rgba(0,0,0,0.15), 0px 12px 10px -10px rgba(0,0,0,0.05); 
+    border-radius: 50%;
+    /* background-color: lightblue;
+    position:relative;
+    
+    justify-content: center; */
+}
+#number{
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
