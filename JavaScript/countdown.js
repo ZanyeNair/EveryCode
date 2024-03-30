@@ -22,7 +22,6 @@ function setGame() {
 }
 
 
-
 function startTimer() {
     var countdownDuration = 30; // Countdown duration in seconds
     var countdownStart = Date.now(); // Record the start time
@@ -44,5 +43,3 @@ function startTimer() {
 }
 
 document.getElementById("startButton").addEventListener("click", startTimer);
-
-
