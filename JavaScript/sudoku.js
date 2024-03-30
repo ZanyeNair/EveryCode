@@ -65,7 +65,7 @@ function setGame() {
         for (let c = 0; c < 9; c++) {
             let tile = document.createElement("div");
             tile.id = r.toString() + "-" + c.toString();
-            if (board[0][r][c] != "-") {
+            if (board[r][c] != "-") {
                 tile.innerText = board[1][r][c];
                 tile.classList.add("tile-start");
             }
