@@ -6,7 +6,17 @@ body{
     text-align: center;
 
 }
+button{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: lightblue;
+    border: 1px solid black;
+    margin: 2px;
+    padding: 10px;
+    cursor: pointer;
+}
 p{
+    border: 2px solid black;
     font-size: 50px;
     
     margin: 2px;
@@ -22,6 +32,28 @@ p{
     text-size-adjust: 50%;
 
 
+}
+#word{
+    width: 432px;
+    height: 50px;
+    background-color: lightcoral;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+.ins{
+    width: 44px; 
+    height: 44px;
+    border: 1px solid black;
+    margin: 2px;
+
+    /* Text */
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #letters{
     width: 450px;
