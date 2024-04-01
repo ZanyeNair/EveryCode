@@ -19,6 +19,9 @@ function setGame() {
         car.classList.add("car");
         document.getElementById("letters").appendChild(car);
     }
+    let inp = document.createElement("input");
+    document.getElementById("word").appendChild(inp);
+
 }
 
 
