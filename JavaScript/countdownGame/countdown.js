@@ -2,7 +2,7 @@ var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 var vowels = ["A", "E", "I", "O", "U"];
 var consonants = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"];
 var i = 0;
-
+let ls = "";
 
 
 
@@ -25,23 +25,40 @@ function setGame() {
     // document.getElementById("word").appendChild(inp);
 
 }
+function afterFilled(){
+    if(i==9){
+        document.getElementById("vowels").disabled = true;
+        document.getElementById("consonants").disabled = true;
+    startTimer();
+    }
+    
+}
+
 
 function addVowel(){
     if(i<9){
         let car = document.createElement("div");
-        car.innerText = vowels[Math.floor(Math.random() * 5)];
+        ls += vowels[Math.floor(Math.random() * 5)];
+        car.innerText = ls;
         car.classList.add("car");
         document.getElementById("letters").appendChild(car);
         i++;
+        
+        afterFilled();
+        
     }
 }
 function addConsonants(){
     if(i<9){
     let car = document.createElement("div");
-    car.innerText = consonants[Math.floor(Math.random() * 21)];
+    ls += consonants[Math.floor(Math.random() * 21)];
+    car.innerText = ls;
     car.classList.add("car");
     document.getElementById("letters").appendChild(car);
     i++;
+    
+    afterFilled();
+    
     }
 }
 
@@ -51,13 +68,16 @@ function afterTimer(){
         const input = document.getElementById(i);
         word += input.value;
         input.value = "";
+        document.getElementById(i).disabled = true;
+
     }
     document.getElementById("finalWord").innerHTML = word;
+    alert(ls);
 
 }
 
 function startTimer() {
-    var countdownDuration = 30; // Countdown duration in seconds
+    var countdownDuration = 10; // Countdown duration in seconds
     var countdownStart = Date.now(); // Record the start time
 
     function updateCountdown() {
