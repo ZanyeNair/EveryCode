@@ -1,8 +1,9 @@
-var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+//var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var vowels = ["A", "E", "I", "O", "U"];
 var consonants = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"];
 var i = 0;
 let ls = "";
+letters = [];
 
 
 
@@ -27,9 +28,11 @@ function setGame() {
 }
 function afterFilled(){
     if(i==9){
+
+        alert(letters);
         document.getElementById("vowels").disabled = true;
         document.getElementById("consonants").disabled = true;
-    startTimer();
+        startTimer();
     }
     
 }
@@ -37,8 +40,10 @@ function afterFilled(){
 
 function addVowel(){
     if(i<9){
+        
         let car = document.createElement("div");
-        ls += vowels[Math.floor(Math.random() * 5)];
+        ls = vowels[Math.floor(Math.random() * 5)];
+        letters.push(ls);
         car.innerText = ls;
         car.classList.add("car");
         document.getElementById("letters").appendChild(car);
@@ -51,7 +56,8 @@ function addVowel(){
 function addConsonants(){
     if(i<9){
     let car = document.createElement("div");
-    ls += consonants[Math.floor(Math.random() * 21)];
+    ls = consonants[Math.floor(Math.random() * 21)];
+    letters.push(ls);
     car.innerText = ls;
     car.classList.add("car");
     document.getElementById("letters").appendChild(car);
@@ -72,7 +78,7 @@ function afterTimer(){
 
     }
     document.getElementById("finalWord").innerHTML = word;
-    alert(ls);
+    
 
 }
 
