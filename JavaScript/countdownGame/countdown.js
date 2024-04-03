@@ -6,6 +6,46 @@ let ls = "";
 letters = [];
 
 
+// "1".addEventListener("keyup", goToTwo);
+// input2.addEventListener("2", goToThree);
+// input3.addEventListener("3", goToFour);
+// input4.addEventListener("4", goToFive);
+// input5.addEventListener("5", goToSix);
+// input6.addEventListener("6", goToSeven);
+// input7.addEventListener("7", goToEight);
+// input8.addEventListener("8", goToNine);
+
+function goToTwo(){
+    
+    if(document.getElementById("1").value.length == 1){
+        document.getElementById("2").focus();
+    }
+    if(document.getElementById("2").value.length == 1){
+        document.getElementById("3").focus();
+    }
+    if(document.getElementById("3").value.length == 1){
+        document.getElementById("4").focus();
+    }
+    if(document.getElementById("4").value.length == 1){
+        document.getElementById("5").focus();
+    }
+    if(document.getElementById("5").value.length == 1){
+        document.getElementById("6").focus();
+    }
+    if(document.getElementById("6").value.length == 1){
+        document.getElementById("7").focus();
+    }
+    if(document.getElementById("7").value.length == 1){
+        document.getElementById("8").focus();
+    }
+    if(document.getElementById("8").value.length == 1){
+        document.getElementById("9").focus();
+    }
+}
+
+
+
+
 
 window.onload = function() {
     setGame();
@@ -20,6 +60,7 @@ function setGame() {
         ins.id = i;
         ins.maxLength = 1;
         ins.classList.add("car");
+        ins.addEventListener("keyup", goToTwo);
         document.getElementById("word").appendChild(ins);
     }
     // let inp = document.createElement("input");
