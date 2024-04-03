@@ -4,6 +4,15 @@ var consonants = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q
 var i = 0;
 let ls = "";
 letters = [];
+const fs = require('fs');
+fs.readFile('words.txt', 'utf8', (err, data) =>{
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log(data);
+});
+
 
 
 // "1".addEventListener("keyup", goToTwo);
@@ -110,12 +119,15 @@ function addConsonants(){
 }
 
 function afterTimer(){
+    
     let word = "";
     for (let i = 1; i <= 9; i++) {
         const input = document.getElementById(i);
+        input.toUpperCase();
         word += input.value;
         input.value = "";
         document.getElementById(i).disabled = true;
+       
 
     }
     document.getElementById("finalWord").innerHTML = word;
