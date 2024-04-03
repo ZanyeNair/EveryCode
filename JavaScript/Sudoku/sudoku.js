@@ -30,6 +30,52 @@ var solution = [
 window.onload = function() {
     setGame();
 }
+function checkRow(a, rows, col){
+    for (let r = 0; r < 9; r++) {
+        if(board[r][col] == a){
+            return false;
+        }
+    }
+    return true;
+}
+function checkCol(a, rows, col){
+    for(let c=0; c<9; c++){ 
+        if(board[rows, c] == a){
+            return false;
+        }
+    }
+    return true;
+}
+function checkSquare(a, rows, col){
+    let r = Math.floor(rows/3) * 3;
+    let c = Math.floor(col/3) * 3;
+    for(let i = r; i < r + 3; i++){
+        for(let j = c; j < c + 3; j++){
+            if(board[i][j] == a){
+                return false;
+            }
+        }
+    }
+    return true;
+}
+function startSolve(){
+    for (let r = 0; r < 9; r++) {
+        for (let c = 0; c < 9; c++) {
+            if(board[r][c] == "-"){
+                for(let numbs = 1; numbs < 10; numbs++){
+                    if(checkCol(numbs, c)){
+                        if(checkRow(numbs, r)){
+                            if(checkSquare(numbs, r, c)){
+                                this.innerText = numSelected.id;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
 
 function setGame() {
     // Digits 1-9
