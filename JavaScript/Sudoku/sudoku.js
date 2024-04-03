@@ -70,7 +70,7 @@ function startSolve(){
                     if(checkCol(numbs, c)){
                         if(checkRow(numbs, r)){
                             if(checkSquare(numbs, r, c)){
-                                document.getElementById(ri.toString() + "-" + ci.toString()).innerText = numbs;
+                                document.getElementById(r.toString() + "-" + c.toString()).innerText = numbs;
                             }
                         }
                     }
