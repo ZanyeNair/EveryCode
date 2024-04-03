@@ -1,5 +1,6 @@
 var numSelected = null;
 var tileSelected = null;
+let ti = "0-0";
 
 var errors = 0;
 
@@ -59,6 +60,9 @@ function checkSquare(a, rows, col){
     return true;
 }
 function startSolve(){
+    // let ri = 0;
+    // let ci = 0;
+    // document.getElementById(ri.toString() + "-" + ci.toString()).innerText = 1;
     for (let r = 0; r < 9; r++) {
         for (let c = 0; c < 9; c++) {
             if(board[r][c] == "-"){
@@ -66,7 +70,7 @@ function startSolve(){
                     if(checkCol(numbs, c)){
                         if(checkRow(numbs, r)){
                             if(checkSquare(numbs, r, c)){
-                                this.innerText = numSelected.id;
+                                document.getElementById(ri.toString() + "-" + ci.toString()).innerText = numbs;
                             }
                         }
                     }
