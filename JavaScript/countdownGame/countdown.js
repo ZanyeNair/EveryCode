@@ -4,6 +4,7 @@ var consonants = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q
 var i = 0;
 let ls = "";
 letters = [];
+wordChosen = [];
 // const fs = require('fs');
 // fs.readFile('words.txt', 'utf8', (err, data) =>{
 //     if (err) {
@@ -76,6 +77,18 @@ function setGame() {
     // document.getElementById("word").appendChild(inp);
 
 }
+function check(){
+    for(i = 0; i<word.length-1; i++){
+        if(letters.indexOf(word.substr(i, i+1)) == -1){
+            alert("Word not in list");
+            //call function later
+        }
+        else if(letters.indexOf(word.substr(i, i+1)) != -1){
+            letters.splice(letters.indexOf(word.substr(i, i+1)), 1);
+            alert(letters);
+        }
+}
+}
 function afterFilled(){
     if(i==9){
 
@@ -119,27 +132,43 @@ function addConsonants(){
 }
 
 function afterTimer(){
-    alert("e")
+    
     let word = "";
     for (let i = 1; i <= 9; i++) {
         const input = document.getElementById(i.toString());
-        alert(input.value);
-        input.toUpperCase();
+       
+        
         word += input.value;
         input.value = "";
         document.getElementById(i).disabled = true;
-        alert(word);
+        
        
 
         
     }
     alert(word);
+    for(let i = 1; i <= 9; i++){
+        wordChosen.push(word.slice(i-1, i));
+    }
+    alert(wordChosen);
     let wording = document.createElement("div");
     wording.innerText = word;
     document.getElementById("finalWord").appendChild(wording);
-    
+    // check();
+    for(i = 0; i<word.length-1; i++){
+        if(letters.indexOf(word.substr(i, i+1)) == -1){
+            alert("Word not in list");
+            //call function later
+        }
+        else if(letters.indexOf(word.substr(i, i+1)) != -1){
+            letters.splice(letters.indexOf(word.substr(i, i+1)), 1);
+            alert(letters);
+        }
+}
 
 }
+
+
 
 function startTimer() {
     var countdownDuration = 10; // Countdown duration in seconds
