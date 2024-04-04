@@ -160,9 +160,13 @@ function afterTimer(){
             alert("Word not in list");
             //call function later
         }
-        else if(letters.indexOf(word.substr(i, i+1)) != -1){
-            letters.splice(letters.indexOf(word.substr(i, i+1)), 1);
-            alert(letters);
+        else{
+            if(letters.indexOf(word.substr(i, i+1)),word.substr(i, i+1) == letters.length-1){
+                letters.pop();
+            }
+            else{             
+                letters.splice(letters.indexOf(word.substr(i, i+1)),word.substr(i, i+1));
+            }
         }
 }
 
