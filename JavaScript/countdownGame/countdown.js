@@ -79,20 +79,21 @@ function setGame() {
 }
 function check(){
     for(i = 0; i<word.length-1; i++){
+        alert(letters.indexOf(word.substr(i, i+1)) == -1);
         if(letters.indexOf(word.substr(i, i+1)) == -1){
             alert("Word not in list");
             //call function later
         }
         else if(letters.indexOf(word.substr(i, i+1)) != -1){
             letters.splice(letters.indexOf(word.substr(i, i+1)), 1);
-            alert(letters);
+            alert("letters " + letters);
         }
 }
 }
 function afterFilled(){
     if(i==9){
 
-        alert(letters);
+        alert("letters are " + letters);
         document.getElementById("vowels").disabled = true;
         document.getElementById("consonants").disabled = true;
         startTimer();
@@ -146,29 +147,30 @@ function afterTimer(){
 
         
     }
-    alert(word);
+    alert("the word they made is" + word);
     for(let i = 1; i <= 9; i++){
         wordChosen.push(word.slice(i-1, i));
     }
-    alert(wordChosen);
+    alert("Word chosen contains" + wordChosen);
     let wording = document.createElement("div");
     wording.innerText = word;
     document.getElementById("finalWord").appendChild(wording);
     // check();
+    alert("letters are " + letters);
+   
     for(i = 0; i<word.length-1; i++){
-        if(letters.indexOf(word.substr(i, i+1)) == -1){
-            alert("Word not in list");
-            //call function later
-        }
-        else{
-            if(letters.indexOf(word.substr(i, i+1)),word.substr(i, i+1) == letters.length-1){
-                letters.pop();
-            }
-            else{             
-                letters.splice(letters.indexOf(word.substr(i, i+1)),word.substr(i, i+1));
-            }
-        }
-}
+        alert(letters.indexOf(wordChosen[i]) == -1);
+        // alert(letters.findIndex(word.substr(i, i+1)) == -1);
+        // if(letters.findIndex(word.substr(i, i+1)) == -1){
+        //     alert("Word not in list");
+        //     //call function later
+        // }
+        // else if(letters.indexOf(word.substr(i, i+1)) != -1){
+        //     letters.splice(letters.indexOf(word.substr(i, i+1)), 1);
+        //     alert("letters " + letters);
+        // }
+    
+    }
 
 }
 
