@@ -2,22 +2,25 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  function handleNameChamge(){
+    const names = ["John", "Dave", "Jane", "Kevin"];
+    const int = Math.floor(Math.random() * names.length);
+    return names[int];
+  }
+  //you can create variables that dont get rturned
+  const name = "John Doe";
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+        Hello {handleNameChamge()}!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       
+        {/* you can  make stuff to strings immediatly by encolising them in an {} */}
+        {/* Java script expresions use {}*/}
       </header>
+     
     </div>
   );
 }
