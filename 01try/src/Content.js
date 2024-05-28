@@ -71,28 +71,8 @@ function Content(){
 
     return (
         <main>
-            <h2>Number of Guesses: {guess}</h2>
-            <button onClick = {numberGuesses}>Add One Guess</button>
-            <ul>
-                {image.map((i) => (
-                    <li className = "i" key = {i.id}>
-                        <img src = {i.pic} alt = "Picture" onClick={() => makeBad(i.id)}/>
-                        <p>{i.id}</p>
-                    </li>
-                ))}
-            </ul>
-            
-            {/* <ul>
-                {items.map((item) => (
-                    <li className = "item" key = {item.id}>
-                        <input type="checkbox" checked={item.checked} />
-                        <label>{item.item}</label>
-                        <FaTrashAlt role="button" tabIndex = "0" />
-                    </li>
-                ))}
-            </ul>
-           <p>Hello</p> */}
-            {/* <p onDoubleClick = {handleClick}>
+           
+            <p onDoubleClick = {handleClick}>
                 Hello {name}!
                 <br/>
                 count: {count}
