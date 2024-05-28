@@ -37,6 +37,7 @@ function Content(){
     return (
         <main>
             <h2>Number of Guesses: {guess}</h2>
+           
             <button type = "button" class = "btn btn-primary rounded-pill px-3" onClick = {numberGuesses}>Add One Guess</button>
            
             <ul>
