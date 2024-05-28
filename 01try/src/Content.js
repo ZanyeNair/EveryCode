@@ -37,7 +37,8 @@ function Content(){
     return (
         <main>
             <h2>Number of Guesses: {guess}</h2>
-            <button type = "button" class = "btn btn-success" onClick = {numberGuesses}>Add One Guess</button>
+            <button type = "button" class = "btn btn-primary rounded-pill px-3" onClick = {numberGuesses}>Add One Guess</button>
+           
             <ul>
                 {image.map((i) => (
                     <li className = "i" key = {i.id}>
