@@ -1,5 +1,4 @@
 import {useState} from 'react';
-import { FaTrashAlt } from 'react-icons/fa';
 
 
 function Content(){
@@ -39,6 +38,7 @@ function Content(){
             <h2>Number of Guesses: {guess}</h2>
            
             <button type = "button" class = "btn btn-primary rounded-pill px-3" onClick = {numberGuesses}>Add One Guess</button>
+            <p>hekki</p>
            
             <ul>
                 {image.map((i) => (
