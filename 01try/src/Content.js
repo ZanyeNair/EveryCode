@@ -4,29 +4,11 @@ import { FaTrashAlt } from 'react-icons/fa';
 
 function Content(){
 
-    // const [items, setItems] = useState([
-    //     {
-    //         id:1,
-    //         checked: false,
-    //         item: "One half pound bag of Cocoa Covered Almonds"
-    //     },
-    //     {
-    //         id:2,
-    //         checked: false,
-    //         item: "Item 2"
-    //     },
-    //     {    
-    //         id:3,
-    //         checked: false,
-    //         item: "Item 3"
-    //     }
-        
-    // ])
     const [image, setImage] = useState([
         {
             id: 1,
             pic: "images.jpeg",
-            picX: "images.jpeg",
+            picX: "checkMark.jpeg",
         },
         {
             id: 2,
@@ -41,46 +23,30 @@ function Content(){
 
 
     const [guess, setGuess] = useState(0)
-    // const [count, setCount] = useState(0)
-    // function handleNameChamge(){
-    //     const names = ["John", "my g", "Jane", "Kevin"];
-    //     const int = Math.floor(Math.random() * names.length);
-    //     setName(names[int]);
-    //   }
-    // function handleCountChange(){
-    //     setCount(count+1);
-    // }
-    // function handleClick(){
-    //     console.log("You clicked it")
-    // }
-    // function handleClick2(name){
-    //     console.log(name +  ' clicked it')
-    // }
-    // function handleClick3(e){
-    //     console.log(e)
-    // }
+    
     function numberGuesses(){
         setGuess(guess + 1);
     }
-    function makeBad(i){
-        
-    }
-    function makeGood(id){
+    function makeBad(id){
         console.log("hello");
+        const listImage = image.map((item) => item.id === id ? {...item, pic: item.picX} : item);
+        setImage(listImage);
+        setGuess(guess + 1);
     }
 
     return (
         <main>
-           
-            <p onDoubleClick = {handleClick}>
-                Hello {name}!
-                <br/>
-                count: {count}
-            </p>
-            <button onClick={handleNameChamge}>Change Namee</button>
-            <button onClick={handleCountChange}>Change Count</button>
-            <button onClick={() => handleClick2('dave')}>Click me</button>
-            <button onClick={(e) => handleClick3(e)}>Click me</button> */}
+            <h2>Number of Guesses: {guess}</h2>
+            <button type = "button" class = "btn btn-success" onClick = {numberGuesses}>Add One Guess</button>
+            <ul>
+                {image.map((i) => (
+                    <li className = "i" key = {i.id}>
+                        <img src = {i.pic} alt = "Picture" onClick={() => makeBad(i.id)}/>
+                        <p>{i.id}</p>
+                    </li>
+                ))}
+            </ul>
+            
         </main>
     )
 }

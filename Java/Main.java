@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Main{
     
     public static void main(String[] args) {
-        new int[3] arr = [1,2,3];
-        Methods n = new Methods;
-        System.out.println(n.dup(arr));
+        // new int[3] arr = [1,2,3];
+        // Methods n = new Methods;
+        // System.out.println(n.dup(arr));
     }
 }
 

@@ -3,6 +3,7 @@
 import Header from './Header';
 import Content from'./Content';
 import Footer from './Footer';
+  
 
 function App() {
    //you can create variables that dont get rturned
