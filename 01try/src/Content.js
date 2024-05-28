@@ -3,24 +3,44 @@ import { FaTrashAlt } from 'react-icons/fa';
 
 
 function Content(){
-    const [items, setItems] = useState([
-        {
-            id:1,
-            checked: false,
-            item: "One half pound bag of Cocoa Covered Almonds"
-        },
-        {
-            id:2,
-            checked: false,
-            item: "Item 2"
-        },
-        {    
-            id:3,
-            checked: false,
-            item: "Item 3"
-        }
+
+    // const [items, setItems] = useState([
+    //     {
+    //         id:1,
+    //         checked: false,
+    //         item: "One half pound bag of Cocoa Covered Almonds"
+    //     },
+    //     {
+    //         id:2,
+    //         checked: false,
+    //         item: "Item 2"
+    //     },
+    //     {    
+    //         id:3,
+    //         checked: false,
+    //         item: "Item 3"
+    //     }
         
+    // ])
+    const [image, setImage] = useState([
+        {
+            id: 1,
+            pic: "images.jpeg",
+            picX: "images.jpeg",
+        },
+        {
+            id: 2,
+            pic: "images.jpeg",
+        },
+        {
+            id: 3,
+            pic: "images.jpeg",
+        }
+
     ])
+
+
+    const [guess, setGuess] = useState(0)
     // const [count, setCount] = useState(0)
     // function handleNameChamge(){
     //     const names = ["John", "my g", "Jane", "Kevin"];
@@ -39,11 +59,30 @@ function Content(){
     // function handleClick3(e){
     //     console.log(e)
     // }
+    function numberGuesses(){
+        setGuess(guess + 1);
+    }
+    function makeBad(i){
+        
+    }
+    function makeGood(id){
+        console.log("hello");
+    }
 
     return (
         <main>
-
+            <h2>Number of Guesses: {guess}</h2>
+            <button onClick = {numberGuesses}>Add One Guess</button>
             <ul>
+                {image.map((i) => (
+                    <li className = "i" key = {i.id}>
+                        <img src = {i.pic} alt = "Picture" onClick={() => makeBad(i.id)}/>
+                        <p>{i.id}</p>
+                    </li>
+                ))}
+            </ul>
+            
+            {/* <ul>
                 {items.map((item) => (
                     <li className = "item" key = {item.id}>
                         <input type="checkbox" checked={item.checked} />
@@ -52,7 +91,7 @@ function Content(){
                     </li>
                 ))}
             </ul>
-           
+           <p>Hello</p> */}
             {/* <p onDoubleClick = {handleClick}>
                 Hello {name}!
                 <br/>
