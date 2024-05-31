@@ -1,9 +1,3 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-
-import React from 'react';
-import App from './App';
-import Home from './Home';
 
 function Header(){
     // const headerSytles = {
@@ -12,8 +6,7 @@ function Header(){
     // }
     return (
         // <header style= {headerSytles}>
-       <p>e</p>
-        
+        <p>This is now a form</p>
         
     )
 }

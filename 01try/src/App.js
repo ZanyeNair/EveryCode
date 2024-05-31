@@ -3,6 +3,11 @@
 import Header from './Header';
 import Content from'./Content';
 import Footer from './Footer';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Form from './Form';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import About from './About';
 
 
   
@@ -13,7 +18,9 @@ function App() {
   return (
     <div className="App">
      <Header />
-     <Content />
+     {/* <Content /> */}
+     {/* <About /> */}
+    <Form />
      <Footer />
 
         {/* you can  make stuff to strings immediatly by encolising them in an {} */}
