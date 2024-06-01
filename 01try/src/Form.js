@@ -4,7 +4,7 @@ function Form(){
 
   return(
     
-    <form>
+    <form class="bg-primary bg-gradient py-3">
         <label>
             Name:
             <input class="form-control" type="text" />

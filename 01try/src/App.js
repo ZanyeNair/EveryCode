@@ -19,8 +19,9 @@ function App() {
     <div className="App">
      <Header />
      {/* <Content /> */}
-     {/* <About /> */}
+    
     <Form />
+    <About />
      <Footer />
 
         {/* you can  make stuff to strings immediatly by encolising them in an {} */}
