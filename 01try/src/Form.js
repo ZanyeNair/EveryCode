@@ -4,13 +4,14 @@ function Form(){
 
   return(
     
-    <form class="bg-primary bg-gradient py-3">
+    <form class="btn btn-lg m-4 text-light gradient-form1">
         <label>
             Name:
             <input class="form-control" type="text" />
+            
         </label>
         <label>
-            Age:
+        Age:
             <input class="form-control"  type="number" />
         </label>
         <label>
@@ -30,7 +31,7 @@ function Form(){
             Time of interview:
             <input class="form-control" type="time" />
         </label>
-        <br></br>
+       
         <label>
             <input type="submit" value="Submit" />
         </label>

@@ -24,7 +24,7 @@ body {
   align-items: center;
   height: 250; 
   width: 100%;
-  max-width: 2500px;
+  max-width: 200px;
   border: 1px solid mediumblue;
   margin: auto;
 }
@@ -32,7 +32,7 @@ body {
 header {
   width: 100%;
   padding: 0 0.25em;
-  background-color: mediumblue;
+  background-color: gray;
   color: aliceblue;
   display: flex;
   justify-content: space-between;
@@ -52,7 +52,7 @@ main {
 footer {
   width: 100%;
   padding: 0.25em;
-  background-color: mediumblue;
+  background-color: gray;
   color: aliceblue;
   display: grid;
   place-content: center;
@@ -83,3 +83,4 @@ form {
   font: size 30px;
   background: linear-gradient(orange, green);
 }
+

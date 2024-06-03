@@ -1,46 +1,40 @@
-
+import Accordion from 'react-bootstrap/Accordion';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card'; 
 function About() {
     //you can create variables that dont get rturned
    const name = "John Doe";
    return (
-    <div class="accordion" id="accordionPanelsStayOpenExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-        Accordion Item #1
-      </button>
-    </h2>
-    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-      <div class="accordion-body">
-        Section 1
-      </div>
+    <div>
+        <Accordion defaultActiveKey="0">
+        <Accordion.Item eventKey="0">
+            <Accordion.Header>Accordion Item #1</Accordion.Header>
+            <Accordion.Body>
+            Topic 1
+            </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="1">
+            <Accordion.Header>Accordion Item #2</Accordion.Header>
+            <Accordion.Body>
+           Topic 2
+            </Accordion.Body>
+        </Accordion.Item>
+        </Accordion>
+
+        <Card style={{ width: '18rem' }}>
+
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+
     </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-      <div class="accordion-body">
-        Section 2
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-      <div class="accordion-body">
-       Section 3
-      </div>
-    </div>
-  </div>
-</div>
+        
    );
  }
  
