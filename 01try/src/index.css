@@ -1,43 +1,19 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 22px;
-}
-
-body {
-  min-height: 100vh;
-  font-family: 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.App {
-  display: flex;
-  flex-direction: column;
+*{
   justify-content: center;
-  align-items: center;
-  height: 250; 
-  width: 100%;
-  max-width: 200px;
-  border: 1px solid mediumblue;
-  margin: auto;
 }
 
-header {
+.nav {
   width: 100%;
-  padding: 0 0.25em;
-  background-color: gray;
+  padding: 0.25em;
+  background-color: rgb(244, 166, 152);
+  text-emphasis-color: black;
   color: aliceblue;
   display: flex;
+  text-size-adjust: 100%;
   justify-content: space-between;
   align-items: center;
 }
+
 
 main {
   width: 100%;
@@ -52,21 +28,35 @@ main {
 footer {
   width: 100%;
   padding: 0.25em;
-  background-color: gray;
+  background-color: rgb(244, 166, 152);;
   color: aliceblue;
   display: grid;
   place-content: center;
 }
 
+
 form {
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   padding: 0.5em;
+  color: black;
 }
-
+.cardsHome{
+  width: 80%;
+  height: 50px;
+}
+nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+.e{
+  text-align: right;
+}
 .gradient-custom {
   /* fallback for old browsers */
   background: #a18cd1;
