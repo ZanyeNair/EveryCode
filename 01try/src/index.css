@@ -54,6 +54,11 @@ nav a {
   text-decoration: none;
   font-weight: bold;
 }
+.errors{
+  color: red;
+  font-weight: bold;
+
+}
 .e{
   text-align: right;
 }

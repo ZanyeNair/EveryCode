@@ -4,12 +4,13 @@ import Header from './Header';
 import Content from'./Content';
 import Footer from './Footer';
 import React from 'react';
-import Form from './pages/Form';
+import InterviewForm from './pages/InterviewForm';
 import { BrowserRouter as Router, Switch, Route, Routes } from "react-router-dom";
 import About from './pages/About';
 import Navbar from './Navbar';
 
 import Home from './pages/Home';
+import SignUp from './pages/SignUp';
 
 
 
@@ -26,8 +27,9 @@ function App() {
       <div className = "container">
         <Routes>
             <Route path = "/" element={<Home />}/>
-            <Route path = "/form" element={<Form />}/>
+            <Route path = "/interviewForm" element={<InterviewForm />}/>
             <Route path = "/about" element={<About />}/>
+            <Route path = "/signup" element={<SignUp />}/>
           
         </Routes>
       </div>
