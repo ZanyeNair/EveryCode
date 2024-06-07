@@ -8,6 +8,8 @@ import Stage1 from './cardComponents/Stage1';
 import Stage2 from './cardComponents/Stage2';
 import Stage3 from './cardComponents/Stage3';
 import Stage4 from './cardComponents/Stage4';
+import Carousel from 'react-bootstrap/Carousel';
+
 
 
 function Content(){
@@ -25,6 +27,7 @@ function Content(){
             setcardD(words[i]);
             setStage(stages[i]);
         }
+       
 
         
     }
@@ -40,41 +43,31 @@ function Content(){
                     </p>
                 </Col>
                 <Col xs = {12} md = {8}>
-                    <Card>
-                        <Card.Body>
-                            <Card.Title>
-                                <Row>
-                                    <Col>
-                                        If you're ready to start, get in touch with us!
-                                    </Col>
-                                    <Col>
-                                        0{i} /03
-                                    </Col>
-                                </Row>
-                            </Card.Title>
-                            <Card.Text>
-
-                            <Row>
-                                    <Col xs = {12} md = {8}>
-                                        {cardD}
-                                        <Row>
-
-                                            {stage}
-                                            
-                                        </Row>
-                                    </Col>
-                                    <Col >
-                                        <button onClick={nextCard}>Next</button>
-                                    </Col>
-                                </Row>
-                                
-                               
-                               
-                            </Card.Text>
-                           
-                        </Card.Body>
-                        
-                    </Card>
+                <Carousel>
+      {/* <Carousel.Item>
+        <ExampleCarouselImage text="First slide" />
+        <Carousel.Caption>
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <ExampleCarouselImage text="Second slide" />
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <ExampleCarouselImage text="Third slide" />
+        <Carousel.Caption>
+          <h3>Third slide label</h3>
+          <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel> */}
                 </Col>
             </Row>
             <Row>
@@ -85,3 +78,41 @@ function Content(){
 }
 
 export default Content;
+
+
+
+// <Card>
+//                         <Card.Body>
+//                             <Card.Title>
+//                                 <Row>
+//                                     <Col>
+//                                         If you're ready to start, get in touch with us!
+//                                     </Col>
+//                                     <Col>
+//                                         0{i} /03
+//                                     </Col>
+//                                 </Row>
+//                             </Card.Title>
+//                             <Card.Text>
+
+//                             <Row>
+//                                     <Col xs = {12} md = {8}>
+//                                         {cardD}
+//                                         <Row>
+
+//                                             {stage}
+                                            
+//                                         </Row>
+//                                     </Col>
+//                                     <Col >
+//                                         <button onClick={nextCard}>Next</button>
+//                                     </Col>
+//                                 </Row>
+                                
+                               
+                               
+//                             </Card.Text>
+                           
+//                         </Card.Body>
+                        
+//                     </Card>

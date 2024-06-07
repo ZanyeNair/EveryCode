@@ -27,18 +27,6 @@ export default function SignUp(){
         else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)){
             errors.email = "Invalid email address";
         }
-        if(!values.age){
-            errors.age = "Required";
-        }
-        else if(isNaN(values.age)){
-            errors.age = "Must be a number";
-        }
-        else if(values.age <10 ){
-            errors.age = "You can not be under 10 years old";
-        }
-        else if(values.age > 110){
-            errors.age = "You can not be over 110 years old";
-        }
 
         return errors;
     }
@@ -47,7 +35,6 @@ export default function SignUp(){
           firstName: '',
           lastName: '',
           email: '',
-          age : '',
         },
         validate,
         onSubmit: values => {
@@ -93,15 +80,6 @@ export default function SignUp(){
             />
             {formik.errors.email ? <div class = "errors" >{formik.errors.email}</div> : null}
 
-                <label htmlFor="age">Age</label>
-                <input
-                id="age"
-                name="age"
-                type="number"
-                onChange={formik.handleChange}
-                value={formik.values.age}
-                />
-                {formik.errors.age ? <div class = "errors" >{formik.errors.age}</div> : null}
 
         
             <button type="submit">Submit</button>
