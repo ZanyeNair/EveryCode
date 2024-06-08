@@ -11,6 +11,11 @@ import Carousel from 'react-bootstrap/Carousel';
 
 
 function Content(){
+    const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+  };
 
     const validate = values => {
         const errors = {};
@@ -69,7 +74,7 @@ function Content(){
                     </p>
                 </Col>
                 <Col xs = {12} md = {8}>
-                <Carousel>
+                <Carousel activeIndex={index} onSelect={handleSelect}>
                     <Carousel.Item>
 
                         <Row>
@@ -147,22 +152,41 @@ function Content(){
 
                         <h2>What best explains you?</h2>   
                         <input type="radio" id="html" name="fav_language" value="form"/>
-                        <label for="html">Formseeker</label><br></br>
+                        <label for="html">Jobseeker</label><br></br>
                         <input type="radio" id="html" name="fav_language" value="HTML"/>
-                        <label for="html">HTML</label><br></br>
+                        <label for="html">Recruiter</label><br></br>
                         <input type="radio" id="html" name="fav_language" value="HTML"/>
-                        <label for="html">HTML</label><br></br>                     
+                        <label for="html">Educational Institution</label><br></br>                     
         
                         
                        
                     </Carousel.Item>
-                    <Carousel.Item>
-                        
-                     
-                        <h3>Third slide label</h3>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                        </p>
+                    <Carousel.Item>                     
+                        <Row>
+                            <Col>
+                                <h1 class = "titlething">
+                                    If you're ready to start, get in touch with us!
+                                </h1>
+                            </Col>
+                            <Col>
+                                <p>
+                                    03/03
+                                </p>
+                            </Col>
+                        </Row>
+                        <label for="texting">Jobseeker</label><br></br>
+                        <input type="text" id="texting" name="canweknow"/>
+
+                   
+                    </Carousel.Item>
+                    <Carousel.Item class = "fourth">                     
+                        <h1>Thank you for submitting, we're excited to chat!</h1>
+
+                        <p>We will reach out to you soon</p>
+                        <button>
+                            Close
+                        </button>
+
                    
                     </Carousel.Item>
                 </Carousel>
