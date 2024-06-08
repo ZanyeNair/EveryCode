@@ -74,7 +74,7 @@ function Content(){
 
                         <Row>
                             <Col>
-                                <h1>
+                                <h1 class = "titlething">
                                     If you're ready to start, get in touch with us!
                                 </h1>
                             </Col>
@@ -134,7 +134,7 @@ function Content(){
                     <Carousel.Item>
                         <Row>
                             <Col>
-                                <h1>
+                                <h1 class = "titlething">
                                     If you're ready to start, get in touch with us!
                                 </h1>
                             </Col>
@@ -147,11 +147,11 @@ function Content(){
 
                         <h2>What best explains you?</h2>   
                         <input type="radio" id="html" name="fav_language" value="form"/>
-                <label for="html">Formseeker</label><br></br>
-                <input type="radio" id="html" name="fav_language" value="HTML"/>
-                <label for="html">HTML</label><br></br>
-                <input type="radio" id="html" name="fav_language" value="HTML"/>
-                <label for="html">HTML</label><br></br>                     
+                        <label for="html">Formseeker</label><br></br>
+                        <input type="radio" id="html" name="fav_language" value="HTML"/>
+                        <label for="html">HTML</label><br></br>
+                        <input type="radio" id="html" name="fav_language" value="HTML"/>
+                        <label for="html">HTML</label><br></br>                     
         
                         
                        
