@@ -36,9 +36,10 @@ body {
   width: 20%;
   height: 5%;
   padding: 15px;
+}
 
-
-
+.titlething{
+  font-size: 1.5em;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

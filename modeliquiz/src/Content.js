@@ -4,33 +4,59 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import { useState } from 'react';
-import Stage1 from './cardComponents/Stage1';
-import Stage2 from './cardComponents/Stage2';
-import Stage3 from './cardComponents/Stage3';
-import Stage4 from './cardComponents/Stage4';
+import { useFormik, Field, Form} from 'formik';
 import Carousel from 'react-bootstrap/Carousel';
+
 
 
 
 function Content(){
 
-    const [cardD, setcardD] = useState('Hello! Start with you name..');
-    const [i, setI] = useState(1);
-    const words = ['Hello! Start with you name..', 'What best explains you?', 'Sounds good! Anything else you want to know?']
-    const stages = [<Stage1 />, <Stage2 />, <Stage3 />, <Stage4 />];
-    const [stage, setStage] = useState(stages[0]);
-
-
-    function nextCard(){
-        if(i < 3){
-            setI(i+1);
-            setcardD(words[i]);
-            setStage(stages[i]);
-        }
-       
-
+    const validate = values => {
+        const errors = {};
         
+        if(!values.firstName){
+            errors.firstName = "Required";
+        }
+        else if(values.firstName.length > 15){
+            errors.firstName = "Must be 15 characters or less";
+        }
+        if(!values.lastName){
+            errors.lastName = "Required";
+        }
+        else if(values.lastName.length > 20){
+            errors.lastName = "Must be 20 characters or less";
+        }
+        if(!values.email){
+            errors.email = "Required";
+        }
+        else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)){
+            errors.email = "Invalid email address";
+        }
+
+
+        return errors;
     }
+    const formik = useFormik({
+        
+
+        initialValues: {
+          firstName: '',
+          lastName: '',
+          email: '',
+          picked: '',
+
+        },
+        validate,
+        onSubmit: values => {
+          alert(JSON.stringify(values, null, 2));
+        },
+      });
+
+    const [cardD, setcardD] = useState('Hello! Start with you name..');
+    const words = ['Hello! Start with you name..', 'What best explains you?', 'Sounds good! Anything else you want to know?']
+
+
     return (
         <Container>
             <Row>
@@ -44,30 +70,102 @@ function Content(){
                 </Col>
                 <Col xs = {12} md = {8}>
                 <Carousel>
-      {/* <Carousel.Item>
-        <ExampleCarouselImage text="First slide" />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <ExampleCarouselImage text="Second slide" />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <ExampleCarouselImage text="Third slide" />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel> */}
+                    <Carousel.Item>
+
+                        <Row>
+                            <Col>
+                                <h1>
+                                    If you're ready to start, get in touch with us!
+                                </h1>
+                            </Col>
+                            <Col>
+                                <p>
+                                    01/03
+                                </p>
+                            </Col>
+                        </Row>
+                        
+                        <Container>
+                            
+                            <form onSubmit={formik.handleSubmit}>
+                            <Row>
+                                <Col>
+                                <input
+                                    id="firstName"
+                                    name="firstName"
+                                    type="text"
+                                    placeholder= "First Name"
+                                    onChange={formik.handleChange}
+                                    value={formik.values.firstName}
+                                />
+                                {formik.errors.firstName ? <div class = "errors">{formik.errors.firstName}</div> : null}
+                                </Col>
+                                <Col>
+                                    <input
+                                        id="lastName"
+                                        name="lastName"
+                                        type="text"
+                                        placeholder = "Last Name"
+                                        onChange={formik.handleChange}
+
+                                        value={formik.values.lastName}
+                                    />
+                                
+                                {formik.errors.lastName ? <div class = "errors" >{formik.errors.lastName}</div> : null}
+                            </Col>
+                            </Row>
+                        
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder= "Email"
+                                onChange={formik.handleChange}
+                                value={formik.values.email}
+                            />
+                            {formik.errors.email ? <div class = "errors" >{formik.errors.email}</div> : null}
+
+                        
+                            <button type="submit">Submit</button>
+                            </form>
+                        </Container>
+                        
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <Row>
+                            <Col>
+                                <h1>
+                                    If you're ready to start, get in touch with us!
+                                </h1>
+                            </Col>
+                            <Col>
+                                <p>
+                                    02/03
+                                </p>
+                            </Col>
+                        </Row>
+
+                        <h2>What best explains you?</h2>   
+                        <input type="radio" id="html" name="fav_language" value="form"/>
+                <label for="html">Formseeker</label><br></br>
+                <input type="radio" id="html" name="fav_language" value="HTML"/>
+                <label for="html">HTML</label><br></br>
+                <input type="radio" id="html" name="fav_language" value="HTML"/>
+                <label for="html">HTML</label><br></br>                     
+        
+                        
+                       
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        
+                     
+                        <h3>Third slide label</h3>
+                        <p>
+                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        </p>
+                   
+                    </Carousel.Item>
+                </Carousel>
                 </Col>
             </Row>
             <Row>
@@ -79,40 +177,3 @@ function Content(){
 
 export default Content;
 
-
-
-// <Card>
-//                         <Card.Body>
-//                             <Card.Title>
-//                                 <Row>
-//                                     <Col>
-//                                         If you're ready to start, get in touch with us!
-//                                     </Col>
-//                                     <Col>
-//                                         0{i} /03
-//                                     </Col>
-//                                 </Row>
-//                             </Card.Title>
-//                             <Card.Text>
-
-//                             <Row>
-//                                     <Col xs = {12} md = {8}>
-//                                         {cardD}
-//                                         <Row>
-
-//                                             {stage}
-                                            
-//                                         </Row>
-//                                     </Col>
-//                                     <Col >
-//                                         <button onClick={nextCard}>Next</button>
-//                                     </Col>
-//                                 </Row>
-                                
-                               
-                               
-//                             </Card.Text>
-                           
-//                         </Card.Body>
-                        
-//                     </Card>
