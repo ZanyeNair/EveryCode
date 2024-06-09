@@ -10,6 +10,7 @@ import Carousel from 'react-bootstrap/Carousel';
 
 
 
+
 function Content(){
     const [index, setIndex] = useState(0);
 
@@ -74,7 +75,7 @@ function Content(){
                     </p>
                 </Col>
                 <Col xs = {12} md = {8}>
-                <Carousel activeIndex={index} onSelect={handleSelect}>
+                <Carousel class = "sliding" activeIndex={index} onSelect={handleSelect}>
                     <Carousel.Item>
 
                         <Row>
@@ -193,7 +194,7 @@ function Content(){
                 </Col>
             </Row>
             <Row>
-                <p>Follow us on: </p> <img src = "facebook.png" alt = "facebook" /> <img src = "twitter.png" alt = "twitter" /> <img src = "instagram.png" alt = "instagram" />
+                <p>Follow us on: </p> <img src = "facekbook.png" alt = "facebook" class = "logos" />  <img class = "logos" src = "instagram.jpeg" alt = "instagram" /> <img class = "logos" src = "linkedin.png" alt = "Linkdin" /> <img class = "logos" src = "youtube.png" alt = "Youtbue" />
             </Row>
         </Container>
     );
