@@ -38,11 +38,12 @@ input [type = "radio"]{
   padding: 5px;
 
 }
-.logos{
-  width: 10%;
-  height: 50%;
-
-  max-width: 10px;
+.social{
+  height: 20%;
+  max-height: 100px;
+  max-width: 20;
+  margin: 0 auto;
+  display: block;
 }
 .e:hover{
   color:#606bf4;
@@ -57,6 +58,22 @@ input [type = "radio"]{
   padding: 15px;
 }
 
+input[type="text"]{
+  width: 50%;
+  height: 5%;
+  padding: 15px;
+  border-radius: 25px;
+  border: 2px solid #7F90FA;
+  background-color: #c6d4ff;
+}
+input[type="email"]{
+  width: 50%;
+  height: 10%;
+  padding: 15px;
+  border-radius: 25px;
+  border: 2px solid #7F90FA;
+  background-color: #c6d4ff;
+}
 .titlething{
   font-size: 1.5em;
 }
@@ -66,4 +83,11 @@ code {
 }
 .fourth{
   justify-content: center;
+}
+
+.right.carousel-control, .left.carousel-control {
+  display: none;
+}
+.slides{
+  border: black;
 }

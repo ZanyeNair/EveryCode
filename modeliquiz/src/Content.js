@@ -12,11 +12,19 @@ import Carousel from 'react-bootstrap/Carousel';
 
 
 function Content(){
-    const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
-  };
+    
+  function goToFace(){
+    window.location.href = "https://www.facebook.com/";
+  }
+  function goToInsta(){
+    window.location.href = "https://www.instagram.com/";
+  }
+  function goToLink(){
+    window.location.href = "https://www.linkedin.com/";
+  }
+  function goToU(){
+    window.location.href = "https://www.youtube.com/";
+  }
 
     const validate = values => {
         const errors = {};
@@ -62,9 +70,14 @@ function Content(){
     const [cardD, setcardD] = useState('Hello! Start with you name..');
     const words = ['Hello! Start with you name..', 'What best explains you?', 'Sounds good! Anything else you want to know?']
 
+    const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);}
+
 
     return (
-        <Container>
+        <Container class = "slides">
             <Row>
                 <Col xs = {6} md = {4}>
                     <h1 class = "qs">
@@ -75,7 +88,7 @@ function Content(){
                     </p>
                 </Col>
                 <Col xs = {12} md = {8}>
-                <Carousel class = "sliding" activeIndex={index} onSelect={handleSelect}>
+                <Carousel activeIndex={index} onSelect={handleSelect}>
                     <Carousel.Item>
 
                         <Row>
@@ -132,7 +145,7 @@ function Content(){
                             {formik.errors.email ? <div class = "errors" >{formik.errors.email}</div> : null}
 
                         
-                            <button type="submit">Submit</button>
+                            <button type="submit" onClick={handleSelect}>Submit</button>
                             </form>
                         </Container>
                         
@@ -152,12 +165,21 @@ function Content(){
                         </Row>
 
                         <h2>What best explains you?</h2>   
+                        <Row>
+                            <Col>
+                            
+                           
                         <input type="radio" id="html" name="fav_language" value="form"/>
                         <label for="html">Jobseeker</label><br></br>
                         <input type="radio" id="html" name="fav_language" value="HTML"/>
                         <label for="html">Recruiter</label><br></br>
                         <input type="radio" id="html" name="fav_language" value="HTML"/>
-                        <label for="html">Educational Institution</label><br></br>                     
+                        <label for="html">Educational Institution</label><br></br> 
+                        </Col>
+                        <Col>
+                        <button type="submit" onClick={handleSelect}>Submit</button>  
+                        </Col>
+                        </Row>                  
         
                         
                        
@@ -175,8 +197,11 @@ function Content(){
                                 </p>
                             </Col>
                         </Row>
+
                         <label for="texting">Jobseeker</label><br></br>
                         <input type="text" id="texting" name="canweknow"/>
+
+                        <button type="submit" onClick={handleSelect}>Submit</button>
 
                    
                     </Carousel.Item>
@@ -184,17 +209,29 @@ function Content(){
                         <h1>Thank you for submitting, we're excited to chat!</h1>
 
                         <p>We will reach out to you soon</p>
-                        <button>
-                            Close
-                        </button>
+                        <button type="submit" onClick={handleSelect}>Close</button>
 
                    
                     </Carousel.Item>
                 </Carousel>
                 </Col>
             </Row>
-            <Row>
-                <p>Follow us on: </p> <img src = "facekbook.png" alt = "facebook" class = "logos" />  <img class = "logos" src = "instagram.jpeg" alt = "instagram" /> <img class = "logos" src = "linkedin.png" alt = "Linkdin" /> <img class = "logos" src = "youtube.png" alt = "Youtbue" />
+            <Row xs="auto">
+                <Col md={1}>
+                    <p>Follow us on: </p>
+                    </Col>
+                <Col md={1}>
+                    <img src = "facekbook.png" alt = "facebook" class = "social" onClick={goToFace}/>
+                </Col>
+                <Col >
+                    <img class = "social" src = "instagram.jpeg" alt = "instagram" onClick={goToInsta}/>
+                </Col>
+                <Col >
+                    <img class = "social" src = "linkedin.png" alt = "Linkdin" onClick={goToLink}/>
+                </Col>
+                <Col >
+                    <img class = "social" src = "youtube.png" alt = "Youtube" onClick={goToU}/>
+                </Col>
             </Row>
         </Container>
     );
