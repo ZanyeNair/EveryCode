@@ -84,9 +84,12 @@ code {
 .fourth{
   justify-content: center;
 }
-
+/* 
 .right.carousel-control, .left.carousel-control {
-  display: none;
+  color: black;
+} */
+.carousel-control-next-icon, .carousel-control-prev-icon{
+  visibility:hidden;
 }
 .slides{
   border: black;

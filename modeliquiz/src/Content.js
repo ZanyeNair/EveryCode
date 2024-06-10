@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card';
 import { useState } from 'react';
 import { useFormik, Field, Form} from 'formik';
 import Carousel from 'react-bootstrap/Carousel';
+import Stack from 'react-bootstrap/Stack';
 
 
 
@@ -90,6 +91,7 @@ function Content(){
                 <Col xs = {12} md = {8}>
                 <Carousel activeIndex={index} onSelect={handleSelect}>
                     <Carousel.Item>
+                    
 
                         <Row>
                             <Col>
@@ -145,12 +147,14 @@ function Content(){
                             {formik.errors.email ? <div class = "errors" >{formik.errors.email}</div> : null}
 
                         
-                            <button type="submit" onClick={handleSelect}>Submit</button>
+                            <button  onClick={handleSelect}>Submit</button>
                             </form>
+                           
                         </Container>
                         
                     </Carousel.Item>
                     <Carousel.Item>
+                        
                         <Row>
                             <Col>
                                 <h1 class = "titlething">
