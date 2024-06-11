@@ -13,7 +13,8 @@ import Stack from 'react-bootstrap/Stack';
 
 
 function Content(){
-    
+    const all = false;
+    const [allIn, setAllIn] = useState('All Fields are Required');
   
 
     const validate = values => {
@@ -48,7 +49,7 @@ function Content(){
           firstName: '',
           lastName: '',
           email: '',
-          picked: '',
+          
 
         },
         validate,
@@ -63,6 +64,15 @@ function Content(){
     const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex) => {
+    if(index === 1){
+        if(all){
+            setIndex(2);
+        }
+        else{
+            formik.errors.allIn = "All Fields are Required";
+        };
+
+    }
    if(index === 3){
         setIndex(0);
     }
@@ -84,7 +94,7 @@ function Content(){
                     </p>
                 </Col>
                 <Col xs = {12} md = {8}>
-                <Carousel activeIndex={index} onSelect={handleSelect}>
+                <Carousel activeIndex={index} onSelect={handleSelect} interval={null} slide = {false} indicators = {false} controls = {false} touch = {false}>
                     <Carousel.Item>
                     
 
@@ -141,7 +151,7 @@ function Content(){
                             />
                             {formik.errors.email ? <div class = "errors" >{formik.errors.email}</div> : null}
 
-                        
+                            {allIn}
                             <button  onClick={handleSelect}>Submit</button>
                             </form>
                            
