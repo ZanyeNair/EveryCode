@@ -13,8 +13,8 @@ import Stack from 'react-bootstrap/Stack';
 
 
 function Content(){
-    const all = false;
-    const [allIn, setAllIn] = useState('All Fields are Required');
+    const [all, setAll] = useState(false);
+    const [allIn, setAllIn] = useState('');
   
 
     const validate = values => {
@@ -54,7 +54,7 @@ function Content(){
         },
         validate,
         onSubmit: values => {
-          alert(JSON.stringify(values, null, 2));
+          
         },
       });
 
@@ -63,23 +63,63 @@ function Content(){
 
     const [index, setIndex] = useState(0);
 
-  const handleSelect = (selectedIndex) => {
-    if(index === 1){
-        if(all){
-            setIndex(2);
+    function handleSelect(){
+       
+        var ele = document.getElementsByName('sel');
+        var selected;
+        for (var i = 0; i < ele.length; i++) {
+            if (ele[i].checked)
+                selected =  ele[i].value;
+            
         }
-        else{
-            formik.errors.allIn = "All Fields are Required";
-        };
+        var x = document.getElementById('texting').value;
+        
 
+
+        
+    
+
+        if(index == 0 && formik.values.firstName !== '' && formik.values.lastName !== '' && formik.values.email !== ''){
+            setAll(true);
+        }
+        else if(index == 1 &&selected  == "job" || selected == "rec" || selected == "edu"){
+            setAll(true);
+
+        }
+        else if(index == 2 && x !== ''){
+            setAll(true);
+        }
+        
+        else{
+            setAllIn('All Fields are Required');
+        };
+        alert(x);
+        
+        if(index === 0 && all){
+            setIndex(1);
+            setAll(false);
+            setAllIn('');
+            
+        }
+        else if(index === 1 && all){
+            setIndex(2);
+            setAll(false);
+            setAllIn('');
+            
+        }
+        else if(index === 2 && all){
+            setIndex(3);
+            setAllIn('');
+            
+        }
+        else if(index === 3 && all){
+            setIndex(0);
+            formik.resetForm();
+            document.getElementsByName('sel').value = undefined;
+            document.getElementById('texting').value = '';
+            setAll(false)
+        };
     }
-   if(index === 3){
-        setIndex(0);
-    }
-    else{
-        setIndex(index+1);
-    };
-};
 
 
     return (
@@ -94,7 +134,7 @@ function Content(){
                     </p>
                 </Col>
                 <Col xs = {12} md = {8}>
-                <Carousel activeIndex={index} onSelect={handleSelect} interval={null} slide = {false} indicators = {false} controls = {false} touch = {false}>
+                <Carousel activeIndex={index} interval={null} slide = {false} indicators = {false} controls = {false} touch = {false}>
                     <Carousel.Item>
                     
 
@@ -140,19 +180,25 @@ function Content(){
                                 {formik.errors.lastName ? <div class = "errors" >{formik.errors.lastName}</div> : null}
                             </Col>
                             </Row>
-                        
-                            <input
-                                id="email"
-                                name="email"
-                                type="email"
-                                placeholder= "Email"
-                                onChange={formik.handleChange}
-                                value={formik.values.email}
-                            />
-                            {formik.errors.email ? <div class = "errors" >{formik.errors.email}</div> : null}
-
-                            {allIn}
-                            <button  onClick={handleSelect}>Submit</button>
+                            <Row>
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    placeholder= "Email"
+                                    onChange={formik.handleChange}
+                                    value={formik.values.email}
+                                />
+                                {formik.errors.email ? <div class = "errors" >{formik.errors.email}</div> : null}
+                            </Row>
+                            <Row>
+                                <Col>
+                                    {allIn}
+                                </Col>
+                                <Col>
+                                    <button  onClick={handleSelect}>Submit</button>
+                                </Col>
+                            </Row>
                             </form>
                            
                         </Container>
@@ -178,12 +224,13 @@ function Content(){
                             <Col>
                             
                            
-                        <input type="radio" id="html" name="fav_language" value="form"/>
-                        <label for="html">Jobseeker</label><br></br>
-                        <input type="radio" id="html" name="fav_language" value="HTML"/>
-                        <label for="html">Recruiter</label><br></br>
-                        <input type="radio" id="html" name="fav_language" value="HTML"/>
-                        <label for="html">Educational Institution</label><br></br> 
+                        <input type="radio" id="html" name="sel" value="job" />
+                        <label for="job">Jobseeker</label><br></br>
+                        <input type="radio" id="html" name="sel" value="rec"/>
+                        <label for="rec">Recruiter</label><br></br>
+                        <input type="radio" id="html" name="sel" value="edu"/>
+                        <label for="edu">Educational Institution</label><br></br> 
+                        {allIn}
                         </Col>
                         <Col>
                         <button type="submit" onClick={handleSelect}>Submit</button>  
@@ -209,6 +256,7 @@ function Content(){
 
                         <label for="texting">Jobseeker</label><br></br>
                         <input type="text" id="texting" name="canweknow"/>
+                        {allIn}
 
                         <button type="submit" onClick={handleSelect}>Submit</button>
 
