@@ -93,7 +93,7 @@ function Content(){
         else{
             setAllIn('All Fields are Required');
         };
-        alert(x);
+       
         
         if(index === 0 && all){
             setIndex(1);
