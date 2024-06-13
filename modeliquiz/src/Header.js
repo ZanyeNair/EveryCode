@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/Col';
 
 function Header(){
     return (
-        <Container>
+        <Container id = "header">
             <Row>
                 <Col xs = {6} md = {4}>
                     <img class = "logo" src= "iquizuanwser.png" alt="iquizuanwser" />

@@ -64,6 +64,9 @@ function Content(){
     const [index, setIndex] = useState(0);
 
     function handleSelect(){
+        var rd1 = document.getElementById('job');
+        var rd2 = document.getElementById('rec');
+        var rd3 = document.getElementById('edu');
        
         var ele = document.getElementsByName('sel');
         var selected;
@@ -73,6 +76,9 @@ function Content(){
             
         }
         var x = document.getElementById('texting').value;
+        
+        alert(x);
+        alert(all);
         
 
 
@@ -117,13 +123,16 @@ function Content(){
             formik.resetForm();
             document.getElementsByName('sel').value = undefined;
             document.getElementById('texting').value = '';
+            rd1.checked = false;
+            rd2.checked = false;
+            rd3.checked = false;
             setAll(false)
         };
     }
 
 
     return (
-        <Container class = "slides">
+        <Container id = "content">
             <Row>
                 <Col xs = {6} md = {4}>
                     <h1 class = "qs">
@@ -134,18 +143,18 @@ function Content(){
                     </p>
                 </Col>
                 <Col xs = {12} md = {8}>
-                <Carousel activeIndex={index} interval={null} slide = {false} indicators = {false} controls = {false} touch = {false}>
+                <Carousel class = "slides" activeIndex={index} interval={null} slide = {false} indicators = {false} controls = {false} touch = {false}>
                     <Carousel.Item>
                     
 
                         <Row>
                             <Col>
-                                <h1 class = "titlething">
+                                <h1 xs = {12} md = {8} class = "titlething">
                                     If you're ready to start, get in touch with us!
                                 </h1>
                             </Col>
-                            <Col>
-                                <p>
+                            <Col xs = {6} md = {4}>
+                                <p class = "number">
                                     01/03
                                 </p>
                             </Col>
@@ -196,9 +205,11 @@ function Content(){
                                     {allIn}
                                 </Col>
                                 <Col>
-                                    <button  onClick={handleSelect}>Submit</button>
+                                <button class = "submit" onClick={handleSelect}>Submit</button>
                                 </Col>
+                                
                             </Row>
+                            
                             </form>
                            
                         </Container>
@@ -213,7 +224,7 @@ function Content(){
                                 </h1>
                             </Col>
                             <Col>
-                                <p>
+                                <p class = "number">
                                     02/03
                                 </p>
                             </Col>
@@ -233,7 +244,7 @@ function Content(){
                         {allIn}
                         </Col>
                         <Col>
-                        <button type="submit" onClick={handleSelect}>Submit</button>  
+                        <button class = "submit" type="submit" onClick={handleSelect}>Submit</button>  
                         </Col>
                         </Row>                  
         
@@ -248,7 +259,7 @@ function Content(){
                                 </h1>
                             </Col>
                             <Col>
-                                <p>
+                                <p class = "number">
                                     03/03
                                 </p>
                             </Col>
@@ -258,7 +269,7 @@ function Content(){
                         <input type="text" id="texting" name="canweknow"/>
                         {allIn}
 
-                        <button type="submit" onClick={handleSelect}>Submit</button>
+                        <button class = "submit" type="submit" onClick={handleSelect}>Submit</button>
 
                    
                     </Carousel.Item>
@@ -266,7 +277,7 @@ function Content(){
                         <h1>Thank you for submitting, we're excited to chat!</h1>
 
                         <p>We will reach out to you soon</p>
-                        <button type="submit" onClick={handleSelect}>Close</button>
+                        <button class = "submit" type="submit" onClick={handleSelect}>Close</button>
 
                    
                     </Carousel.Item>
