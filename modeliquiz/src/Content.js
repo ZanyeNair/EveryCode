@@ -65,29 +65,12 @@ function Content(){
 
     function handleSelect(){
        
-        
-       
-        var ele = document.getElementsByName('sel');
-        var selected;
-        for (var i = 0; i < ele.length; i++) {
-            if (ele[i].checked)
-                selected =  ele[i].value;
-            
-        }
-        
-
-        
-      
-        
-
-
-        
     
 
         if(index == 0 && formik.values.firstName !== '' && formik.values.lastName !== '' && formik.values.email !== ''){
             setAll(true);
         }
-        else if(index == 1 &&selected  == "job" || selected == "rec" || selected == "edu"){
+        else if(index == 1 &&document.getElementById('job').checked || document.getElementById('rec').checked || document.getElementById('edu').checked == "edu"){
             setAll(true);
 
         }
@@ -149,8 +132,8 @@ function Content(){
                     
 
                         <Row>
-                            <Col>
-                                <h1 xs = {12} md = {8} class = "titlething">
+                            <Col xs = {12} md = {8}>
+                                <h1 class = "titlething">
                                     If you're ready to start, get in touch with us!
                                 </h1>
                             </Col>
@@ -217,7 +200,7 @@ function Content(){
                                             {allIn}
                                         </Col>
                                         <Col md = {{span: 3, offset: 9}}>
-                                        <button class = "submit" onClick={handleSelect}>Submit</button>
+                                        <button class = "submit" onClick={handleSelect}>Next</button>
                                         </Col>
                                     </Row>
                                 </form>
@@ -233,28 +216,31 @@ function Content(){
                     <Carousel.Item>
                         
                         <Row>
-                            <Col>
+                            <Col xs = {12} md = {8}>
                                 <h1 class = "titlething">
-                                    If you're ready to start, get in touch with us!
+                                We want to get to know you
                                 </h1>
                             </Col>
-                            <Col>
+                            <Col xs = {6} md = {4}>
                                 <p class = "number">
                                     02/03
                                 </p>
                             </Col>
                         </Row>
-
                         <h2>What best explains you?</h2>   
-                        <Row>
-                            <Col>                       
+                        <Row >
+                            <Col md = {3}>                       
                                 <input type="radio" id="job" name="sel" value="job" class = "radio"/>
-                                <label for="job">Jobseeker</label><br></br>
-                                <input type="radio" id="rec" name="sel" value="rec"/>
-                                <label for="rec">Recruiter</label><br></br>
-                                <input type="radio" id="edu" name="sel" value="edu"/>
-                                <label for="edu">Educational Institution</label><br></br> 
-                               
+                                <label  class = "label" for="job">Jobseeker</label><br></br>
+                                                              
+                            </Col>
+                            <Col md = {3}>
+                                <input type="radio" id="rec" name="sel" value="radio"class = "radio"/>
+                                <label class = "label" for="rec">Recruiter</label><br></br>
+                            </Col>
+                            <Col md = {3}>
+                                <input type="radio" id="edu" name="sel" value="radio"class = "radio"/>
+                                <label  class = "label" for="edu">Educational Institution</label><br></br>
                             </Col>
                            
                         </Row>
@@ -263,7 +249,7 @@ function Content(){
                                 {allIn}
                             </Col>
                             <Col md = {{span: 3, offset: 9}}>
-                            <button class = "submit" onClick={handleSelect}>Submit</button>
+                            <button class = "submit" onClick={handleSelect}>Next</button>
                             </Col>
                         </Row>                  
         
@@ -271,25 +257,33 @@ function Content(){
                        
                     </Carousel.Item>
                     <Carousel.Item>                     
-                        <Row>
-                            <Col>
+                         <Row>
+                            <Col xs = {12} md = {8}>
                                 <h1 class = "titlething">
-                                    If you're ready to start, get in touch with us!
+                                    We want to get to know you
                                 </h1>
                             </Col>
-                            <Col>
+                            <Col xs = {6} md = {4}>
                                 <p class = "number">
                                     03/03
                                 </p>
                             </Col>
                         </Row>
                     
-                        <label for="texting">Jobseeker</label><br></br>
-                        <input type="text" id="texting" name="canweknow"/>
+                        <p>Sounds good! Anything else you want to know?</p>
+                        <Row >
+                            <input type="text" id="texting" name="canweknow" class = "bigText"/>
+                        </Row>
+                        
                         <br/>
-                        {allIn}
-
-                        <button class = "submit" type="submit" onClick={handleSelect}>Submit</button>
+                        <Row>
+                            <Col>
+                                {allIn}
+                            </Col>
+                            <Col md = {{span: 3, offset: 9}}>
+                            <button class = "submit" onClick={handleSelect}>Next</button>
+                            </Col>
+                        </Row> 
 
                    
                     </Carousel.Item>

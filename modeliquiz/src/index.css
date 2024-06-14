@@ -121,16 +121,37 @@ code {
   border-radius: 25px;
   padding: 1em;
   height: 105%;
+
   /* max-width: 600px; */
 }
-.input-container{
-  position: relative;
-  height: 7rem;
-  width: 7rem;
-  margin: 0.5rem;
+.radio{
+  visibility: hidden;
 }
-.input-container input{
-  position: absolute;
+.label{
+  padding:5px 10px;
+  background-color: white;
+  color: #606Bf4;
+  border: 1px solid #606Bf4;
+  border-radius: 100px;
   height: 100px;
   width: 100px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+
+}
+input:checked + .label{
+  background-color: #606Bf4;
+  color: white;
+}
+#texting{
+  height:175px;
+  width: fill;
+  border-radius: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: top;
+  resize: vertical;
 }
