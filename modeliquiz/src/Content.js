@@ -64,9 +64,8 @@ function Content(){
     const [index, setIndex] = useState(0);
 
     function handleSelect(){
-        var rd1 = document.getElementById('job');
-        var rd2 = document.getElementById('rec');
-        var rd3 = document.getElementById('edu');
+       
+        
        
         var ele = document.getElementsByName('sel');
         var selected;
@@ -75,10 +74,10 @@ function Content(){
                 selected =  ele[i].value;
             
         }
-        var x = document.getElementById('texting').value;
         
-        alert(x);
-        alert(all);
+
+        
+      
         
 
 
@@ -92,7 +91,9 @@ function Content(){
             setAll(true);
 
         }
-        else if(index == 2 && x !== ''){
+
+        
+        else if(index == 2 && document.getElementById('texting').value !== ''){
             setAll(true);
         }
         
@@ -113,19 +114,19 @@ function Content(){
             setAllIn('');
             
         }
-        else if(index === 2 && all){
+        else if(index === 2 && document.getElementById('texting').value !== ''){
             setIndex(3);
             setAllIn('');
-            
+           
         }
         else if(index === 3 && all){
             setIndex(0);
             formik.resetForm();
             document.getElementsByName('sel').value = undefined;
             document.getElementById('texting').value = '';
-            rd1.checked = false;
-            rd2.checked = false;
-            rd3.checked = false;
+            document.getElementById('job').checked = false;
+            document.getElementById('rec').checked = false;
+            document.getElementById('edu').checked = false;
             setAll(false)
         };
     }
@@ -134,7 +135,7 @@ function Content(){
     return (
         <Container id = "content">
             <Row>
-                <Col xs = {6} md = {4}>
+                <Col>
                     <h1 class = "qs">
                         Got Questions?
                     </h1>
@@ -142,7 +143,7 @@ function Content(){
                         We are here to Anwser your Every Question, Just fill in the Details and we will Take Care of the Rest.
                     </p>
                 </Col>
-                <Col xs = {12} md = {8}>
+                <Col >
                 <Carousel class = "slides" activeIndex={index} interval={null} slide = {false} indicators = {false} controls = {false} touch = {false}>
                     <Carousel.Item>
                     
@@ -161,56 +162,70 @@ function Content(){
                         </Row>
                         
                         <Container>
-                            
-                            <form onSubmit={formik.handleSubmit}>
                             <Row>
-                                <Col>
-                                <input
-                                    id="firstName"
-                                    name="firstName"
-                                    type="text"
-                                    placeholder= "First Name"
-                                    onChange={formik.handleChange}
-                                    value={formik.values.firstName}
-                                />
-                                {formik.errors.firstName ? <div class = "errors">{formik.errors.firstName}</div> : null}
-                                </Col>
-                                <Col>
-                                    <input
-                                        id="lastName"
-                                        name="lastName"
-                                        type="text"
-                                        placeholder = "Last Name"
-                                        onChange={formik.handleChange}
+                                
+                                <form onSubmit={formik.handleSubmit}>
+                                    <Row>
+                                        <Col md={8}>
+                                            <input
+                                                id="firstName"
+                                                name="firstName"
+                                                type="text"
+                                                placeholder= "First Name"
+                                                onChange={formik.handleChange}
+                                                value={formik.values.firstName}
+                                            />
+                                            
+                                            
+                                                <input
+                                                    id="lastName"
+                                                    name="lastName"
+                                                    type="text"
+                                                    placeholder = "Last Name"
+                                                    onChange={formik.handleChange}
 
-                                        value={formik.values.lastName}
-                                    />
+                                                    value={formik.values.lastName}
+                                                />
+                                            
+                                            
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md = {4}>
+                                            {formik.errors.firstName ? <div class = "errors">{formik.errors.firstName}</div> : null}
+                                        </Col>
+                                        <Col md = {4}>
+                                            {formik.errors.lastName ? <div class = "errors" >{formik.errors.lastName}</div> : null}
+                                        </Col>
+
+                                    </Row>
+                                    <Row >
+                                        <input
+                                            id="email"
+                                            name="email"
+                                            type="email"
+                                            placeholder= "Email"
+                                            onChange={formik.handleChange}
+                                            value={formik.values.email}
+                                        />
+                                        {formik.errors.email ? <div class = "errors" >{formik.errors.email}</div> : null}
+                                        
+                                    </Row>
                                 
-                                {formik.errors.lastName ? <div class = "errors" >{formik.errors.lastName}</div> : null}
-                            </Col>
+                                    <Row>
+                                        <Col>
+                                            {allIn}
+                                        </Col>
+                                        <Col md = {{span: 3, offset: 9}}>
+                                        <button class = "submit" onClick={handleSelect}>Submit</button>
+                                        </Col>
+                                    </Row>
+                                </form>
+                                        
                             </Row>
-                            <Row>
-                                <input
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    placeholder= "Email"
-                                    onChange={formik.handleChange}
-                                    value={formik.values.email}
-                                />
-                                {formik.errors.email ? <div class = "errors" >{formik.errors.email}</div> : null}
-                            </Row>
-                            <Row>
-                                <Col>
-                                    {allIn}
-                                </Col>
-                                <Col>
-                                <button class = "submit" onClick={handleSelect}>Submit</button>
-                                </Col>
                                 
-                            </Row>
-                            
-                            </form>
+                                
+                                
                            
                         </Container>
                         
@@ -232,20 +247,24 @@ function Content(){
 
                         <h2>What best explains you?</h2>   
                         <Row>
-                            <Col>
-                            
+                            <Col>                       
+                                <input type="radio" id="job" name="sel" value="job" class = "radio"/>
+                                <label for="job">Jobseeker</label><br></br>
+                                <input type="radio" id="rec" name="sel" value="rec"/>
+                                <label for="rec">Recruiter</label><br></br>
+                                <input type="radio" id="edu" name="sel" value="edu"/>
+                                <label for="edu">Educational Institution</label><br></br> 
+                               
+                            </Col>
                            
-                        <input type="radio" id="html" name="sel" value="job" />
-                        <label for="job">Jobseeker</label><br></br>
-                        <input type="radio" id="html" name="sel" value="rec"/>
-                        <label for="rec">Recruiter</label><br></br>
-                        <input type="radio" id="html" name="sel" value="edu"/>
-                        <label for="edu">Educational Institution</label><br></br> 
-                        {allIn}
-                        </Col>
-                        <Col>
-                        <button class = "submit" type="submit" onClick={handleSelect}>Submit</button>  
-                        </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                {allIn}
+                            </Col>
+                            <Col md = {{span: 3, offset: 9}}>
+                            <button class = "submit" onClick={handleSelect}>Submit</button>
+                            </Col>
                         </Row>                  
         
                         
@@ -264,9 +283,10 @@ function Content(){
                                 </p>
                             </Col>
                         </Row>
-
+                    
                         <label for="texting">Jobseeker</label><br></br>
                         <input type="text" id="texting" name="canweknow"/>
+                        <br/>
                         {allIn}
 
                         <button class = "submit" type="submit" onClick={handleSelect}>Submit</button>

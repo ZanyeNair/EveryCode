@@ -123,3 +123,14 @@ code {
   height: 105%;
   /* max-width: 600px; */
 }
+.input-container{
+  position: relative;
+  height: 7rem;
+  width: 7rem;
+  margin: 0.5rem;
+}
+.input-container input{
+  position: absolute;
+  height: 100px;
+  width: 100px;
+}
