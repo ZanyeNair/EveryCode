@@ -10,10 +10,10 @@ function Header(){
     return (
         <Container id = "header">
             <Row>
-                <Col xs = {6} md = {4}>
+                <Col xs = {3} md = {3}>
                     <img class = "logo" src= "iquizuanwser.png" alt="iquizuanwser" />
                 </Col>
-                <Col xs = {12} md = {8}>
+                <Col xs = {15} md = {9}>
                 <nav className = "nav">
                    
                     <a href="/features" class = "e">Features</a>

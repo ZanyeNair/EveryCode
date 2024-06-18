@@ -149,7 +149,7 @@ function Content(){
                                 
                                 <form onSubmit={formik.handleSubmit}>
                                     <Row>
-                                        <Col md={8}>
+                                        <Col md={3}>
                                             <input
                                                 id="firstName"
                                                 name="firstName"
@@ -158,20 +158,21 @@ function Content(){
                                                 onChange={formik.handleChange}
                                                 value={formik.values.firstName}
                                             />
-                                            
-                                            
-                                                <input
-                                                    id="lastName"
-                                                    name="lastName"
-                                                    type="text"
-                                                    placeholder = "Last Name"
-                                                    onChange={formik.handleChange}
-
-                                                    value={formik.values.lastName}
-                                                />
-                                            
-                                            
                                         </Col>
+                                        <Col  md={2}>      
+                                            <input
+                                                id="lastName"
+                                                name="lastName"
+                                                type="text"
+                                                placeholder = "Last Name"
+                                                onChange={formik.handleChange}
+
+                                                value={formik.values.lastName}
+                                            />
+                                        </Col>
+                                            
+                                            
+                                        
                                     </Row>
                                     <Row>
                                         <Col md = {4}>
@@ -202,6 +203,10 @@ function Content(){
                                         <Col md = {{span: 3, offset: 9}}>
                                         <button class = "submit" onClick={handleSelect}>Next</button>
                                         </Col>
+                                    </Row>
+
+                                    <Row>
+                                        <p></p>
                                     </Row>
                                 </form>
                                         
@@ -251,7 +256,11 @@ function Content(){
                             <Col md = {{span: 3, offset: 9}}>
                             <button class = "submit" onClick={handleSelect}>Next</button>
                             </Col>
-                        </Row>                  
+                        </Row>
+                        <Row>
+                            <p></p>
+                        </Row>
+                                
         
                         
                        
@@ -284,6 +293,9 @@ function Content(){
                             <button class = "submit" onClick={handleSelect}>Next</button>
                             </Col>
                         </Row> 
+                        <Row>
+                            <p></p>
+                        </Row>
 
                    
                     </Carousel.Item>
