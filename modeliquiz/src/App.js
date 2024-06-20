@@ -6,20 +6,22 @@ import Footer from './Footer';
 import { BrowserRouter as Router, Switch, Route, Routes } from "react-router-dom";
 import APItest from './APItest';
 import { Provider } from 'react-redux';
-import Counter from './features/Counting/Counter';
-import store from './app/store';
+import CakeContainer from './CakeContainer';
+// import Counter from './features/Counting/Counter';
+// import store from './app/store';
 
 
 function App() {
   return (
     <div>
 
-
+{/* 
       <Header />
       <Content />
       <APItest />
 
-      <Footer/>
+      <Footer/> */}
+      <CakeContainer />
     </div>
   );
 }
