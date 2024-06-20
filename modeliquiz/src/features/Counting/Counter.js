@@ -2,13 +2,15 @@ import react, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
     increment,
-    decrement
+    decrement,
+    selectCount
 } from './counterSlice';
 
 
 function Counter() {
-    const count = useSelector(selectCount);
+   
     const dispatch = useDispatch();
+    const count = useSelector(selectCount);
     const [incrementAmount, setIncrementAmount] = useState('2');
 
     return(

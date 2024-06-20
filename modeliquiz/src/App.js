@@ -5,9 +5,9 @@ import Content from './Content';
 import Footer from './Footer';
 import { BrowserRouter as Router, Switch, Route, Routes } from "react-router-dom";
 import APItest from './APItest';
-import store from '/.store';
 import { Provider } from 'react-redux';
 import Counter from './features/Counting/Counter';
+import store from './app/store';
 
 
 function App() {
