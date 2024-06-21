@@ -8,6 +8,7 @@ import APItest from './APItest';
 import { Provider } from 'react-redux';
 import CakeContainer from './CakeContainer';
 import HooksCakeContainer from './HooksCakeContainer';
+import IcecreamContainer from './IceCreamContainer';
 // import Counter from './features/Counting/Counter';
 // import store from './app/store';
 
@@ -24,6 +25,8 @@ function App() {
       <Footer/> */}
       <HooksCakeContainer />
       <CakeContainer />
+      <IcecreamContainer />
+
     </div>
   );
 }
