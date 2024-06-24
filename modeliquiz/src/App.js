@@ -7,11 +7,6 @@ import { BrowserRouter as Router, Switch, Route, Routes } from "react-router-dom
 import APItest from './APItest';
 import { Provider } from 'react-redux';
 import CakeContainer from './CakeContainer';
-import HooksCakeContainer from './HooksCakeContainer';
-import IceContainer from './IceContainer';
-import SmoothieContainer from './smoothieContainer';
-
-
 // import Counter from './features/Counting/Counter';
 // import store from './app/store';
 
@@ -26,7 +21,6 @@ function App() {
       <APItest />
 
       <Footer/> */}
-      <HooksCakeContainer />
       <CakeContainer />
       {/* <IceContainer /> */}
       {/* <smoothieContainer /> */}
