@@ -9,6 +9,8 @@ import { Provider } from 'react-redux';
 import CakeContainer from './CakeContainer';
 import HooksCakeContainer from './HooksCakeContainer';
 import IceContainer from './IceContainer';
+import SmoothieContainer from './smoothieContainer';
+
 
 // import Counter from './features/Counting/Counter';
 // import store from './app/store';
@@ -26,7 +28,8 @@ function App() {
       <Footer/> */}
       <HooksCakeContainer />
       <CakeContainer />
-      <IceContainer />
+      {/* <IceContainer /> */}
+      {/* <smoothieContainer /> */}
 
 
     </div>
