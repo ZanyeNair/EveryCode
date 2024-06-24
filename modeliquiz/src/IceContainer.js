@@ -1,6 +1,6 @@
 import React from 'react'
 import redux from 'redux'
-import { buyIcecream } from './redux/icecream/icecreamAction'
+import { buyIcecream } from './redux/icecream/icecreamActions'
 import { connect } from 'react-redux'
 
 function IceContainer(props) {
