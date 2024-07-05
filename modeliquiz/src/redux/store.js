@@ -4,6 +4,6 @@ import cakeReducer from './cakes/cakeReducer'
 import rootReducer from './rootReducer'
 
 
-const store = createStore(rootReducer)
+const store = createStore(cakeReducer)
 
 export default store
