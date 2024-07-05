@@ -1,12 +1,11 @@
-// import { combineReducers } from "@reduxjs/toolkit";
-// import cakeReducer from "./cakes/cakeReducer";
-// import iceCreamReducer from "./icecream/icecreamReducer";
-// import smoothieReducer from "./smoothies/smoothieReducer";
+import { combineReducers } from "@reduxjs/toolkit";
+import cakeReducer from "./cakes/cakeReducer";
 
-// const rootReducer = combineReducers({
-//     cake:cakeReducer,
-//     icecream: iceCreamReducer,
-//     smoothie: smoothieReducer
-// })
+import smoothieReducer from "./smoothies/smoothieReducer";
 
-// export default rootReducer
+const rootReducer = combineReducers({
+    cake:cakeReducer,
+    smoothie: smoothieReducer
+})
+
+export default rootReducer
